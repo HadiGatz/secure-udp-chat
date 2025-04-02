@@ -6,8 +6,7 @@ def listening_to_port(port_number):
     listener.bind(('', port_number))
     listener.listen()
     client, addr = listener.accept()
-    data = client.recv(1024).decode()
-    print(chr(data))
+    print(chr(port_number))
 
 port_listener = Thread(target=listening_to_port, args=(1032,))
 for i in range(1097, 1122):
